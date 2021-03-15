@@ -43,16 +43,14 @@ Enemy.prototype.update = function (dt) {
         ydiff < 40 &&
         ydiff > -40) {
         score = 0;
+        crashSound.play();
         player.crashed = true;
         player.sprite = 'images/splat.png'; 
-        crashSound.play();
         document.getElementById("scoredisplay").innerHTML = score;
       
       sleep(1500).then(() => {
-        // $("canvas").fadeOut();
         player.reset();
         allEnemies = enemyMaker();
-        // $("canvas").fadeIn();
       })
 
     }
