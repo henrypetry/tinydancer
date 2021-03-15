@@ -22,7 +22,10 @@ var Enemy = function (x, y, speed) {
 
 // Update the enemy's position; Parameter: dt, a time delta between ticks that
 // ensures smooth animation on all computers.
-Enemy.prototype.update = function(dt) {
+Enemy.prototype.update = function (dt) {
+    if (player.crashed) {
+      return;
+    }
     this.x += (this.speed) * dt * (Math.floor(Math.random() * (300 - 50)) + 50);
     if (this.x > 505) {
     	this.x = -150 
@@ -40,12 +43,18 @@ Enemy.prototype.update = function(dt) {
         ydiff < 40 &&
         ydiff > -40) {
         score = 0;
-        $("canvas").fadeOut();
+        player.crashed = true;
+        player.sprite = 'images/splat.png'; 
         crashSound.play();
         document.getElementById("scoredisplay").innerHTML = score;
+      
+      sleep(1500).then(() => {
+        // $("canvas").fadeOut();
         player.reset();
         allEnemies = enemyMaker();
-        $("canvas").fadeIn();
+        // $("canvas").fadeIn();
+      })
+
     }
 };
 
@@ -66,7 +75,8 @@ document.getElementById("scoredisplay").innerHTML = score;
 var Player = function() {
 	this.sprite = 'images/dance-left.png';
 	this.x = 202;
-	this.y = 402;
+  this.y = 402;
+  this.crashed = false;
 };
 
 // Helper function for resetting the player to starting
@@ -75,6 +85,7 @@ Player.prototype.reset = function() {
 	this.x = 202;
   this.y = 402;
   this.sprite = 'images/dance-left.png';
+  this.crashed = false;
 };
 
 // Update the player position.
@@ -89,7 +100,7 @@ Player.prototype.update = function() {
         chimeSound.play();
         document.getElementById("scoredisplay").innerHTML = score;
         $("canvas").fadeOut(100);
-		this.reset();
+		    this.reset();
         allEnemies = enemyMaker();
         $("canvas").fadeIn(100);
 	}
@@ -232,3 +243,7 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+var sleep = function(milliseconds) { 
+  return new Promise(resolve => setTimeout(resolve, milliseconds)); 
+}; 
