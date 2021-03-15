@@ -24,8 +24,7 @@ body {
 }
 
 #TinyImage {
-	margin-top: -10px;
-	/* margin-left: 255px; */
+	margin: 10px;
 }
 
 .hot-container p { margin-top: 10px; }
