@@ -64,7 +64,7 @@ document.getElementById("scoredisplay").innerHTML = score;
 
 // Defining the Player class and its starting properties.
 var Player = function() {
-	this.sprite = 'images/frog-l.png';
+	this.sprite = 'images/dance-left.png';
 	this.x = 202;
 	this.y = 402;
 };
@@ -74,7 +74,7 @@ var Player = function() {
 Player.prototype.reset = function() {
 	this.x = 202;
   this.y = 402;
-  this.sprite = 'images/frog-l.png';
+  this.sprite = 'images/dance-left.png';
 };
 
 // Update the player position.
@@ -113,7 +113,7 @@ Player.prototype.handleInput = function(keyCode) {
             this.x -= 101;
         }
       console.log('left');
-      this.sprite = 'images/frog-l.png';
+      this.sprite = 'images/dance-left.png';
 		break;
 
 		case 'right':
@@ -124,7 +124,7 @@ Player.prototype.handleInput = function(keyCode) {
             this.x += 101;
         }
         console.log('right');
-        this.sprite = 'images/frog-r.png';
+        this.sprite = 'images/dance-right.png';
         break;
 
 		case 'up':

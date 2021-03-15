@@ -113,8 +113,8 @@ var Engine = (function(global) {
         'images/car2.png',
         'images/car3.png',
         'images/car4.png',
-        'images/frog-l.png',
-        'images/frog-r.png'
+        'images/dance-left.png',
+        'images/dance-right.png'
     ]);
     Resources.onReady(init);
 
