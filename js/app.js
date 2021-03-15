@@ -26,6 +26,7 @@ Enemy.prototype.update = function (dt) {
     if (player.crashed) {
       return;
     }
+  
     this.x += (this.speed) * dt * (Math.floor(Math.random() * (300 - 50)) + 50);
     if (this.x > 505) {
     	this.x = -150 
@@ -112,7 +113,11 @@ Player.prototype.render = function() {
 // The handleInput method, which receives user input, allowedKeys (the key
 // which was pressed) and moves the player according to that input.
 // Also logs the key presses in the console.
-Player.prototype.handleInput = function(keyCode) {
+Player.prototype.handleInput = function (keyCode) {
+  if (this.crashed) {
+    return;
+  }
+
 	switch(keyCode) {
 		case 'left':
         if (this.x == 0) {
