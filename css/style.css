@@ -1,86 +1,107 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 body {
-    text-align: center;
-    background-color: #000000
+  text-align: center;
+  background-color: #000000;
+}
+
+.scoretext,
+#scoreddisplay {
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: -10px;
 }
 
 .scoretext {
-	color: #ffffff;
-	font-size: 40px;
-	font-weight: bold;
-	font-family: 'Roboto', sans-serif;
-	margin-bottom: -10px;
+  color: #ffffff;
+  font-size: 40px;
   font-variant: small-caps;
 }
 
 #scoredisplay {
-	color: #ffff00;
-	font-size: 30px;
-	font-weight: bold;
-	font-family: 'Roboto', sans-serif;
-	margin-bottom: -10px;
+  color: #ffff00;
+  font-size: 30px;
+  font-weight: bold;
 }
 
-#TinyTitle {
-	margin: auto;
-	margin: 210px 0 10px 0;
-	font-size: 72px;
-	font-family: 'Roboto', sans-serif;
-	font-weight: bold;
-	color: #ffffff;
+.container p {
+  margin-top: 10px;
 }
 
-#TinyImage {
-	margin: 10px 0 20px 0;
+.container .title {
+  margin: 4rem 0 1rem;
+  font-size: 72px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  color: #ffffff;
 }
 
-.hot-container p { margin-top: 10px; }
-a { text-decoration: none; margin: 0 10px; }
+.container .subtitle {
+  margin: 12px 0;
+  font-size: 22px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+}
 
+.container .image {
+  margin: 12px 0 22px 0;
+}
+
+.container .controls {
+  margin-top: 4rem;
+  width: 200px;
+  border: 1px solid #355c7d;
+  border-radius: 6px;
+  font-size: 22px;
+  font-family: "Open Sans", sans-serif;
+  color: #ccc;
+}
+
+a {
+  text-decoration: none;
+  margin: 0 10px;
+}
 
 a.btn {
-	display: inline-block;
-	color: #666;
-	background-color: #eee;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 14px;
-	padding: 10px 30px;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border: 1px solid rgba(0,0,0,0.3);
-	border-bottom-width: 3px;
+  display: inline-block;
+  color: #666;
+  background-color: #eee;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom-width: 3px;
 }
 
-	a.btn:hover {
-		background-color: #e3e3e3;
-		border-color: rgba(0,0,0,0.5);
-	}
-	
-	a.btn:active {
-		background-color: #CCC;
-		border-color: rgba(0,0,0,0.9);
-	}
+a.btn:hover {
+  background-color: #e3e3e3;
+  border-color: rgba(0, 0, 0, 0.5);
+}
 
-
+a.btn:active {
+  background-color: #ccc;
+  border-color: rgba(0, 0, 0, 0.9);
+}
 
 a.btn.btn-blue {
-	background-color: #567997;
-	border-color: rgba(0,0,0,0.3);
-	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
-	color: #FFF;
+  background-color: #567997;
+  border-color: rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  color: #fff;
 }
 
-	a.btn.btn-blue:hover {
-		background-color: #355c7d;
-		border-color: rgba(0,0,0,0.5);
-	}
-	
-	a.btn.btn-blue:active {
-		background-color: #355c7d;
-		border-color: rgba(0,0,0,0.9);
-	}
+a.btn.btn-blue:hover {
+  background-color: #355c7d;
+  border-color: #fff;
+}
+
+a.btn.btn-blue:active {
+  background-color: #355c7d;
+  border-color: rgba(0, 0, 0, 0.9);
+}
